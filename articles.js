@@ -10,7 +10,7 @@ window.ARTICLES = [
 	 num:"1",
     summary: '一个优雅的网页音乐播放器，支持歌词动效与网易云音乐播放',
     date: '2026-7-14',
-    path: ' markdown/yinxuemusic.md',
+    path: ' /markdown/yinxuemusic.md',
     
   },
   {
