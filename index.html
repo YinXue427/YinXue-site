@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="YinXue · Crat 的个人主页 — 构建有趣的数字体验。">
+<meta name="theme-color" content="#050505">
+<title>YinXue · Crat — 个人主页</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%232997ff'/%3E%3C/svg%3E">
+<script src="js/init.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<div class="bg-blur" id="blurA"></div>
+<div class="bg-blur" id="blurB"></div>
+<div class="bg-overlay"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="top-fade"></div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-default-content">
+      <a class="brand magnetic" href="#hero" data-target="hero">&emsp;YinXue · Crat</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about" data-target="about">关于</a></li>
+          <li><a href="#articles" data-target="articles">文章</a></li>
+          <li><a href="#contact" data-target="contact">联系</a></li>
+        </ul>
+        <button class="icon-btn magnetic" id="btnFullscreen" title="全屏显示">
+          <svg id="fsIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+        </button>
+        <button class="icon-btn magnetic" id="btnRefresh" title="换一张背景">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="8.6" cy="8.6" r="1.35" fill="currentColor"/><circle cx="15.4" cy="15.4" r="1.35" fill="currentColor"/><circle cx="12" cy="12" r="1.35" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-reading-content">
+      <button class="nav-btn-back" id="btnBack" title="返回">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="nav-article-name" id="navArticleName">文章标题</div>
+      <div class="nav-progress-text" id="navProgressText">0%</div>
+    </div>
+  </div>
+  
+  <svg class="nav-progress" id="navProgress">
+    <defs>
+      <linearGradient id="navProgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#2997ff"/>
+        <stop offset="100%" stop-color="#a78bfa"/>
+      </linearGradient>
+    </defs>
+    <rect id="navProgRect" fill="none" stroke="url(#navProgGrad)" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  </svg>
+</nav>
+
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-bg"></div>
+  <div class="side-nav-inner">
+    <div class="nav-group-main">
+      <a href="#hero" class="side-nav-item active" data-target="hero">
+        <span class="nav-title">首页</span><span class="dot"></span>
+      </a>
+      <a href="#about" class="side-nav-item" data-target="about">
+        <span class="nav-title">关于我</span><span class="dot"></span>
+      </a>
+      <a href="#articles" class="side-nav-item" data-target="articles">
+        <span class="nav-title">文章与作品</span><span class="dot"></span>
+      </a>
+      <a href="#contact" class="side-nav-item" data-target="contact">
+        <span class="nav-title">联系方式</span><span class="dot"></span>
+      </a>
+    </div>
+    <div class="nav-group-toc" id="tocList"></div>
+  </div>
+</nav>
+
+<main>
+  <section class="screen hero" id="hero">
+    <div class="hero-bg" id="heroA"></div>
+    <div class="hero-bg" id="heroB"></div>
+    <div class="hero-veil"></div>
+
+    <div class="hero-content" id="heroContent">
+      <p class="eyebrow stagger-item">Personal Site</p>
+      <h1 class="stagger-item">YinXue · Crat</h1>
+      <h2 class="stagger-item">构建有趣的数字体验</h2>
+      <p class="hero-sub stagger-item">精通主流语言 / 设计与开发 / 二次元爱好者。<br>爱上未来，未来已来。</p>
+      <div class="cta-row stagger-item">
+        <a class="btn-liquid magnetic" href="#about" data-target="about"><span>了解更多</span></a>
+        <a class="link-arrow" href="#contact" data-target="contact">联系我 <span>›</span></a>
+      </div>
+    </div>
+    <div class="scroll-hint"><span>SCROLL</span><span class="line"></span></div>
+  </section>
+
+  <section class="screen" id="about">
+    <div class="container editorial-layout">
+      <div class="editorial-left">
+        <p class="eyebrow stagger-item">About Me</p>
+        <h2 class="h2 stagger-item">用极客的方式，<br>重构数字日常。</h2>
+      </div>
+      <div class="editorial-right" id="aboutRight">
+        <div class="hover-spotlight"></div>
+        <p class="lead stagger-item">
+          精通主流技术栈与设计开发，重度二次元爱好者。<br>
+          比起写无聊的业务代码，更沉迷于折腾好看的工具软件和极致的音乐播放器。<br>
+          敲代码和按快门是我的日常，坚信科技与美学的结合，才是极客的最终浪漫。
+        </p>
+        <div class="stats-row">
+          <div class="stat stagger-item"><b>4<sup>+</sup></b><span>年开发经验</span></div>
+          <div class="stat stagger-item"><b>20<sup>+</sup></b><span>交付项目</span></div>
+          <div class="stat stagger-item"><b>∞</b><span>保持好奇</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="articles">
+    <div class="articles-container">
+      <div class="article-list-view" id="articleListView">
+        <div class="articles-header stagger-item">
+          <p class="eyebrow">Articles & Works</p>
+          <h2 class="h2">一些思考，与正在做的事。</h2>
+        </div>
+        <div class="article-list" id="articleListContainer">
+          <div class="hover-spotlight"></div>
+        </div>
+        <div class="all-articles-cta stagger-item" style="margin-top: 24px; text-align: center; padding-bottom: 20px;">
+          <a class="btn-liquid magnetic" href="articles.html"><span>查看全部文章</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen contact" id="contact">
+    <div class="contact-bg-glow"></div>
+    <div class="container contact-content">
+      <p class="eyebrow stagger-item">联系方式</p>
+      <div class="typewriter-wrapper stagger-item">
+        <h2 class="huge-text" id="hugeText"><span id="typewriterText"></span><span class="typewriter-cursor"></span></h2>
+      </div>
+      <p class="lead stagger-item contact-lead">有想法、有项目、或者只是想聊聊，都欢迎找我。</p>
+      <div class="cta-row stagger-item contact-cta">
+        <button class="btn-liquid magnetic" id="btnMail"><span id="mailBtnText" aria-live="polite">发个邮件</span></button>
+        <a class="link-arrow" href="https://github.com/YinXue427" target="_blank" rel="noopener" style="color: #fff;">GitHub <span>›</span></a>
+      </div>
+    </div>
+    <p class="contact-foot">© 2025 YinXue·Crat. All rights reserved.</p>
+  </section>
+</main>
+
+<div class="article-detail-view" id="articleDetailView">
+  <div class="article-inner">
+    <div class="art-header">
+      <div class="article-view-tag" id="artTag">TAG</div>
+      <h1 class="article-view-title" id="artTitle">文章标题</h1>
+      <div class="article-view-meta">
+        <span>YinXue</span><span class="dot"></span><span id="artDate">2025-10-20</span>
+      </div>
+    </div>
+    <div class="article-text" id="artContent"></div>
+  </div>
+</div>
+
+<script src="articles.js" onerror="this.remove()"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

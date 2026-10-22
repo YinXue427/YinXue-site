@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="YinXue · Crat 的全部文章。">
+<meta name="theme-color" content="#050505">
+<title>全部文章 — YinXue · Crat</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%232997ff'/%3E%3C/svg%3E">
+<script src="js/init.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bg-blur" id="blurA"></div>
+<div class="bg-blur" id="blurB"></div>
+<div class="bg-overlay"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="top-fade"></div>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-default-content">
+      <div class="nav-left-group">
+        <a class="nav-back-home magnetic" href="index.html" title="返回首页">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </a>
+        <span class="brand">全部文章</span>
+      </div>
+      <div class="nav-right">
+        <button class="icon-btn magnetic" id="btnSearch" title="搜索文章">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        </button>
+        <button class="icon-btn magnetic" id="btnFullscreen" title="全屏显示">
+          <svg id="fsIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </button>
+        <button class="icon-btn magnetic" id="btnRefresh" title="换一张背景">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="8.6" cy="8.6" r="1.35" fill="currentColor"/><circle cx="15.4" cy="15.4" r="1.35" fill="currentColor"/><circle cx="12" cy="12" r="1.35" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-search-content">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input id="searchInput" type="search" placeholder="搜索标题、摘要或标签…" autocomplete="off">
+      <button class="icon-btn magnetic" id="btnSearchClose" title="关闭搜索">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="nav-reading-content">
+      <button class="nav-btn-back" id="btnBack" title="返回列表">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="nav-article-name" id="navArticleName">文章标题</div>
+      <div class="nav-progress-text" id="navProgressText">0%</div>
+    </div>
+  </div>
+
+  <svg class="nav-progress" id="navProgress">
+    <defs>
+      <linearGradient id="navProgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#2997ff"/>
+        <stop offset="100%" stop-color="#a78bfa"/>
+      </linearGradient>
+    </defs>
+    <rect id="navProgRect" fill="none" stroke="url(#navProgGrad)" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  </svg>
+</nav>
+
+<nav class="side-nav" id="sideNav">
+  <div class="side-nav-bg"></div>
+  <div class="side-nav-inner">
+    <div class="nav-group-main" id="tagNav"></div>
+    <div class="nav-group-toc" id="tocList"></div>
+  </div>
+</nav>
+
+<main>
+  <div class="archive-wrap">
+    <p class="eyebrow">Archive</p>
+    <h1 class="archive-title">全部文章</h1>
+    <p class="archive-desc">这里收录了我在这个站点写下的所有思考与记录。点击任意一篇即可阅读，右侧圆点可切换标签。</p>
+    <p class="archive-meta" id="archiveMeta">—</p>
+
+    <div class="article-list" id="articleListContainer">
+      <div class="hover-spotlight"></div>
+    </div>
+  </div>
+</main>
+
+<div class="article-detail-view" id="articleDetailView">
+  <div class="article-inner">
+    <div class="art-header">
+      <div class="article-view-tag" id="artTag">TAG</div>
+      <h1 class="article-view-title" id="artTitle">文章标题</h1>
+      <div class="article-view-meta">
+        <span>YinXue</span><span class="dot"></span><span id="artDate"></span>
+      </div>
+    </div>
+<div class="article-text" id="artContent"></div>
+    
+    <!-- 新增：分享文章按钮 -->
+    <div class="share-section" id="shareSection">
+      <button class="btn-liquid magnetic" id="btnShare">
+        <span id="shareText">分享文章</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="articles.js" onerror="this.remove()"></script>
+<script src="js/archive.js"></script>
+</body>
+</html>
